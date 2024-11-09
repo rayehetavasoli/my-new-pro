@@ -3,7 +3,7 @@ import React, { FC, useState, useMemo } from 'react';
 import HeaderSection from './headerSection';
 import Footer from './footer';
 import { Table } from './brandTable';
-import EditBrand from './editBrand';
+import {EditBrand} from './editBrand';
 import DeleteBrand from './deleteBrand';
 import { Brand, BrandTableProps } from '@/types/main';
 

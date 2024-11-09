@@ -15,7 +15,7 @@ const Switcher: React.FC = () => {
   return (
     <>
       <div>
-        <DarkModeSwitch checked={darkSide} onChange={toggleDarkMode} size={36} />
+        <DarkModeSwitch checked={darkSide} onChange={toggleDarkMode} size={34} />
       </div>
     </>
   );

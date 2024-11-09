@@ -1,7 +1,4 @@
 import "./style.css";
-import localFont from "next/font/local";
-
-const mainFont = localFont({ src: "../../assets/fonts/IRANSans-web.woff"});
 
 interface AuthLayoutProps {
   children: React.ReactNode;

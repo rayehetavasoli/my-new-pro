@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { AddCircle, SearchNormal1, UserEdit } from 'iconsax-react';
-import AddUser from './addUser';
-import './style.css';
-import { User , HeaderSectionProps } from '@/types/main';
+import { AddUser } from './addUser';
+import { User, HeaderSectionProps } from '@/types/main';
 import { v4 as uuidv4 } from 'uuid';
-
-
+import styles from './style/header.module.scss'; // وارد کردن استایل‌های SCSS
 
 const HeaderSection: React.FC<HeaderSectionProps> = ({ onAddUser, onSearch }) => {
   const [isAddUserOpen, setIsAddUserOpen] = useState(false);
@@ -29,12 +27,12 @@ const HeaderSection: React.FC<HeaderSectionProps> = ({ onAddUser, onSearch }) =>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="search-container">
+          <div className={styles['search-container']}>
             <button>
-              <SearchNormal1 className="search-icon" />
+              <SearchNormal1 className={styles['search-icon']} />
             </button>
             <input
-              className="search-input"
+              className={styles['search-input']}
               type="search"
               placeholder="کاربر مورد نظر را جستجو کنید"
               onChange={handleSearch}

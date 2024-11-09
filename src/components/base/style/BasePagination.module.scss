@@ -1,0 +1,84 @@
+// تعریف متغیرها
+$color-primary: #3b82f6;
+$color-gray-light: #e5e7eb;
+$color-gray-dark: #d1d5db;
+$color-bg-light: #ffffff;
+$color-bg-dark: #1f2937;
+$color-text-light: #111827;
+$color-text-dark: #d1d5db;
+
+// حالت معمولی
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .page-button,
+  .page-number {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.875rem;
+    font-weight: normal;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:disabled {
+      background-color: $color-gray-light;
+      cursor: not-allowed;
+    }
+  }
+
+  // دکمه قبلی و بعدی
+  .page-button {
+    background-color: $color-gray-light;
+
+    &:hover:not(:disabled) {
+      background-color: $color-gray-dark;
+    }
+  }
+
+  // شماره صفحه
+  .page-number {
+    padding: 4px 8px;
+    border-radius: 16px;
+    color: $color-text-light;
+
+    &.active {
+      background-color: $color-primary;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    &:hover:not(.active) {
+      background-color: $color-gray-dark;
+    }
+
+    &.ellipsis {
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+}
+
+// حالت دارک مود
+.dark-mode {
+  .pagination {
+    .page-button,
+    .page-number {
+      color: $color-text-dark;
+      background-color: lighten($color-bg-dark, 5%);
+
+      &:hover:not(:disabled) {
+        background-color: lighten($color-bg-dark, 10%);
+      }
+    }
+
+    .page-number.active {
+      background-color: darken($color-primary, 10%);
+    }
+  }
+}

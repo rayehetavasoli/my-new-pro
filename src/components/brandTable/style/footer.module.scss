@@ -1,0 +1,110 @@
+@import 'variables'; // Import the variables for both light and dark modes
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding: 0 24px;
+}
+
+// Pagination Container
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Page Size Selector
+.page-size-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+// Page Size Label
+.page-size-label {
+  color: $light-primary-color;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+// Select Element
+.select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $light-secondary-color;
+  border-radius: $light-border-radius;
+  padding: 4px 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $light-primary-color;
+  background-color: $light-select-bg;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $light-hover-color;
+    background-color: $light-hover-color;
+    color: white;
+  }
+
+  option {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $light-primary-color;
+    background-color: $light-bg;
+
+    &:hover {
+      background-color: $light-hover-color;
+      color: white;
+    }
+  }
+}
+
+// Select Label
+.select-label {
+  color: $light-primary-color;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+// Dark Mode Styles
+.dark & {
+  .footer-container {
+    background-color: $dark-bg;
+    color: $dark-text-color;
+  }
+
+  .page-size-label,
+  .select-label {
+    color: $dark-primary-color;
+  }
+
+  .select {
+    border-color: $dark-secondary-color;
+    color: $dark-primary-color;
+    background-color: $dark-select-bg;
+
+    &:hover {
+      border-color: $dark-hover-color;
+      background-color: $dark-hover-color;
+      color: white;
+    }
+
+    option {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: $dark-primary-color;
+      background-color: $dark-select-bg;
+
+      &:hover {
+        background-color: $dark-hover-color;
+        color: white;
+      }
+    }
+  }
+}

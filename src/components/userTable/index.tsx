@@ -3,7 +3,7 @@ import React, { FC, useState, useMemo } from 'react';
 import HeaderSection from './headerSection';
 import Footer from './footer';
 import { Table } from './userTable';
-import EditUser from './editUser';
+import {EditUser} from './editUser';
 import DeleteUser from './deleteUser';
 import { User, UserTableProps } from '@/types/main';
 

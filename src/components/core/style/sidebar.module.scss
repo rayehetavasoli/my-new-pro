@@ -1,0 +1,138 @@
+@import 'variables'; // ایمپورت متغیرهای رنگی برای حالت‌های مختلف
+
+
+// Sidebar container
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 100vh;
+  width: 10%;
+  background-color: $primary-bg-light;
+  padding-top: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  // Dark Mode
+  &.dark {
+    background-color: $primary-bg-dark;
+    box-shadow: 2px 0 5px rgba(255, 255, 255, 0.1);
+  }
+}
+
+// Logo Section
+.logo-section {
+  width: 100%;
+  padding: $padding;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $logo-bg-light;
+  transition: background-color 0.3s;
+
+  .logo-image {
+    width: $logo-width;
+    height: $logo-height;
+  }
+
+  // Dark Mode
+  .dark & {
+    background-color: $logo-bg-dark;
+  }
+}
+
+// Menu Items Section
+.menu-items {
+  padding: $padding;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-size;
+  width: 100%;
+}
+
+// Menu Item
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 0;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    color: $icon-color-light;
+    transition: color 0.3s;
+  }
+
+  .text {
+    font-size: $font-size;
+    font-weight: 500;
+    color: $primary-text-light;
+    transition: color 0.3s;
+  }
+
+  &:hover {
+    .icon {
+      color: $hover-text-light;
+    }
+
+    .text {
+      color: $hover-text-light;
+    }
+  }
+
+  // Dark Mode
+  .dark & {
+    .icon {
+      color: $icon-color-dark;
+    }
+
+    .text {
+      color: $primary-text-dark;
+    }
+
+    &:hover {
+      .icon {
+        color: $hover-text-dark;
+      }
+
+      .text {
+        color: $hover-text-dark;
+      }
+    }
+  }
+}
+
+// Inactive Menu Items
+.inactive-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 0;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    color: $inactive-text-light;
+  }
+
+  .text {
+    font-size: $font-size;
+    font-weight: 400;
+    color: $inactive-text-light;
+  }
+
+  // Dark Mode
+  .dark & {
+    .icon {
+      color: $inactive-text-dark;
+    }
+
+    .text {
+      color: $inactive-text-dark;
+    }
+  }
+}

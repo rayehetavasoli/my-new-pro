@@ -1,0 +1,94 @@
+@import 'variables'; // ایمپورت متغیرهای رنگی برای حالت‌های مختلف
+
+
+// Default (Light Mode) Styles
+.header-container {
+  height: 6vh;
+  width: 100%;
+  padding: 0.75rem 5rem;
+  background-color: $primary-bg-light;
+  box-shadow: 0 4px 6px $shadow-color-light;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+  flex-direction: row;
+}
+
+.logout-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $button-padding;
+  border-radius: $border-radius;
+  border: 2px solid $border-color-light;
+  background-color: $primary-bg-light;
+  gap: 0.5rem;
+  transition: background-color 0.3s, border-color 0.3s;
+  cursor: pointer;
+  
+  .logout-icon {
+    color: $border-color-light;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .logout-text {
+    color: $text-primary-light;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  &:hover {
+    background-color: $hover-text-light;
+    border-color: $hover-text-light;
+    .logout-text {
+      color: $primary-bg-light;
+    }
+  }
+}
+
+.profile-image {
+  width: $profile-image-size;
+  height: $profile-image-size;
+  background-color: $profile-bg-light;
+  border-radius: 50%;
+  border: 2px solid $border-color-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+// Dark Mode Styles
+.dark & {
+  background-color: $primary-bg-dark;
+  box-shadow: 0 4px 6px $shadow-color-dark;
+
+  .logout-button {
+    border-color: $border-color-dark;
+    background-color: $primary-bg-dark;
+
+    .logout-icon {
+      color: $border-color-dark;
+    }
+
+    .logout-text {
+      color: $text-primary-dark;
+    }
+
+    &:hover {
+      background-color: $hover-text-dark;
+      border-color: $hover-text-dark;
+      .logout-text {
+        color: $primary-bg-dark;
+      }
+    }
+  }
+
+  .profile-image {
+    background-color: $profile-bg-dark;
+    border: 2px solid $border-color-dark;
+  }
+}

@@ -38,6 +38,16 @@ export interface User {
     onClose: () => void;  
     onAdd: (addUser: User) => void; 
   }
+  
+  export type UserFormMode = 'add' | 'edit';
+
+  export interface UserFormProps {
+    user?: User; // این پراپ اختیاری است، چون در حالت افزودن نیازی به مقدار اولیه نیست.
+    onClose: () => void; // تابع بستن فرم
+    onSave: (user: User) => void; // تابع ذخیره که کاربر جدید یا ویرایش‌شده را می‌گیرد
+    mode: UserFormMode; // مشخص می‌کند که فرم در حالت افزودن یا ویرایش است
+  }
+
 //Brands
   export interface Brand {
     id: number;
@@ -87,4 +97,21 @@ export interface FooterProps {
   currentPage: number;                    
   totalPages: number;                   
   onPageChange: (page: number) => void;   
+}
+
+export interface Brand {
+  id: number;
+  brandName: string;
+  founded: string;
+  country: string;
+  industry: string;
+}
+
+export type BrandFormMode = 'add' | 'edit';
+
+export interface BrandFormProps {
+  brand?: Brand; // این پراپ اختیاری است، چون در حالت افزودن نیازی به مقدار اولیه نیست.
+  onClose: () => void; // تابع بستن فرم
+  onSave: (brand: Brand) => void; // تابع ذخیره که برند جدید یا ویرایش‌شده را می‌گیرد
+  mode: BrandFormMode; // مشخص می‌کند که فرم در حالت افزودن یا ویرایش است
 }

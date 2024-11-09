@@ -1,0 +1,98 @@
+@import 'variables'; // ایمپورت متغیرهای رنگی برای حالت‌های مختلف
+
+// استایل‌های مشترک برای جدول
+.table-container {
+  width: 100%;
+  background-color: $light-bg; // حالت پیش‌فرض Light Mode
+  border-radius: 28px;
+  box-shadow: 0 4px 8px $light-shadow-color; // سایه برای Light Mode
+  overflow-x: auto;
+}
+
+.table {
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid $light-border-color; // مرز برای Light Mode
+}
+
+.table th {
+  background-color: $light-header-bg;
+  font-weight: 600;
+  color: $light-text-color;
+}
+
+.table td {
+  background-color: $light-bg;
+  color: $light-text-color;
+}
+
+.table tr:nth-child(odd) {
+  background-color: $light-hover-bg; // پس‌زمینه برای ردیف‌های فرد
+}
+
+.table tr:hover {
+  background-color: $light-hover-bg; // رنگ برای hover در Light Mode
+}
+
+.no-data {
+  text-align: center;
+  font-size: 14px;
+  color: $light-text-color;
+}
+
+.actions-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+// حالت Dark Mode
+.dark & {
+  background-color: $dark-bg;
+  box-shadow: 0 4px 8px $dark-shadow-color; // سایه برای Dark Mode
+
+  .table {
+    border-color: $dark-border-color;
+  }
+
+  .table th, .table td {
+    color: $dark-text-color;
+    border-color: $dark-border-color;
+  }
+
+  .table th {
+    background-color: $dark-header-bg;
+  }
+
+  .table td {
+    background-color: $dark-bg;
+  }
+
+  .table tr:nth-child(odd) {
+    background-color: $dark-hover-bg; // پس‌زمینه برای ردیف‌های فرد در Dark Mode
+  }
+
+  .table tr:hover {
+    background-color: $dark-hover-bg; // رنگ برای hover در Dark Mode
+  }
+
+  .no-data {
+    color: $dark-text-color;
+  }
+
+  .actions-cell button {
+    color: $dark-text-color;
+    background-color: $dark-header-bg;
+    border: 1px solid $dark-border-color;
+
+    &:hover {
+      background-color: $dark-hover-bg;
+    }
+  }
+}

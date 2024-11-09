@@ -1,0 +1,85 @@
+// تعریف متغیرها برای رنگ‌ها و حالت دارک مود
+$color-blue-light: #3b82f6;
+$color-blue-dark: #2563eb;
+$color-red-light: #ef4444;
+$color-red-dark: #b91c1c;
+
+$color-bg-light: #ffffff;
+$color-bg-dark: #1f2937;
+$color-text-light: #111827;
+$color-text-dark: #d1d5db;
+
+// استایل کلی برای حالت‌های لایت و دارک
+body {
+  background-color: $color-bg-light;
+  color: $color-text-light;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: $color-bg-dark;
+  color: $color-text-dark;
+}
+
+// استایل کامپوننت BaseActionButtons
+.base-action-buttons {
+  display: flex;
+  gap: 8px;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+
+    // استایل دکمه ویرایش
+    &.edit-button {
+      color: $color-blue-light;
+
+      &:hover {
+        color: $color-blue-dark;
+      }
+    }
+
+    // استایل دکمه حذف
+    &.delete-button {
+      color: $color-red-light;
+
+      &:hover {
+        color: $color-red-dark;
+      }
+    }
+  }
+}
+
+// دارک مود
+.dark-mode {
+  .base-action-buttons {
+    button {
+      &.edit-button {
+        color: lighten($color-blue-dark, 10%);
+
+        &:hover {
+          color: $color-blue-light;
+        }
+      }
+
+      &.delete-button {
+        color: lighten($color-red-dark, 10%);
+
+        &:hover {
+          color: $color-red-light;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+@import 'variables'; // Import the variables for both light and dark modes
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    background-color: $bg-color;
+    border: 1px solid $gray-border;
+    border-radius: 16px;
+    width: 230px;
+    transition: background-color 0.3s, border-color 0.3s;
+  
+    &:hover {
+      border-color: $gray-dark;
+  
+      .search-icon {
+        color: $gray-dark;
+      }
+    }
+  
+    .search-icon {
+      width: 18px;
+      height: 18px;
+      color: $gray;
+      transition: color 0.3s;
+    }
+  
+    .search-input {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      font-size: 12px;
+      color: $gray-dark;
+      transition: color 0.3s;
+  
+      &::placeholder {
+        color: $gray-light;
+        transition: color 0.3s;
+  
+        &:hover {
+          color: $gray;
+        }
+      }
+  
+      &:focus {
+        color: $input-focus;
+  
+        &::placeholder {
+          color: $placeholder-focus;
+        }
+      }
+    }
+  }
+  
+  // Dark Mode Styles
+  .dark & {
+    .search-container {
+      background-color: $dark-bg-color;
+      border: 1px solid $dark-gray-border;
+  
+      &:hover {
+        border-color: $dark-gray-dark;
+  
+        .search-icon {
+          color: $dark-gray-dark;
+        }
+      }
+  
+      .search-icon {
+        color: $dark-gray;
+      }
+  
+      .search-input {
+        color: $dark-gray-dark;
+  
+        &::placeholder {
+          color: $dark-gray-light;
+        }
+  
+        &:focus {
+          color: $dark-input-focus;
+  
+          &::placeholder {
+            color: $dark-placeholder-focus;
+          }
+        }
+      }
+    }
+  }
+  

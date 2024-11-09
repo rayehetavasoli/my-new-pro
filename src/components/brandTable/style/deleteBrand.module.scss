@@ -1,0 +1,118 @@
+@import 'variables'; // Import the variables for both light and dark modes
+
+.delete-brand-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 9999; /* To make sure it stays on top */
+}
+
+// Default Light Mode Styles
+.delete-brand-modal {
+  padding: 24px;
+  background-color: $light-white;
+  border-radius: 32px;
+  box-shadow: 0 4px 6px $light-shadow-color;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+}
+
+.warning-icon {
+  width: 40px;
+  height: 40px;
+  color: $light-primary-color;
+}
+
+.modal-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: $light-black;
+  margin-top: 10px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.modal-button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: $border-radius;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.delete-button {
+  background-color: $light-primary-color;
+  color: $light-white;
+  border: none;
+
+  &:hover {
+    background-color: darken($light-primary-color, 10%);
+  }
+}
+
+.cancel-button {
+  background-color: $light-white;
+  border: 1px solid $light-black;
+  color: $light-secondary-color;
+
+  &:hover {
+    background-color: $light-black;
+    color: $light-white;
+  }
+}
+
+// Dark Mode Styles
+.dark & {
+  .delete-brand-modal {
+    background-color: $dark-white;
+    box-shadow: 0 4px 6px $dark-shadow-color;
+  }
+
+  .warning-icon {
+    color: $dark-primary-color;
+  }
+
+  .modal-title {
+    color: $dark-black;
+  }
+
+  .delete-button {
+    background-color: $dark-primary-color;
+    color: $dark-white;
+
+    &:hover {
+      background-color: darken($dark-primary-color, 10%);
+    }
+  }
+
+  .cancel-button {
+    background-color: $dark-white;
+    border: 1px solid $dark-black;
+    color: $dark-secondary-color;
+
+    &:hover {
+      background-color: $dark-black;
+      color: $dark-white;
+    }
+  }
+
+  .modal-title,
+  .modal-button {
+    color: $dark-black;
+  }
+}

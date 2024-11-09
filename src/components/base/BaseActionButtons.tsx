@@ -2,24 +2,27 @@
 import React from 'react';
 import { Edit, Trash } from 'iconsax-react';
 import { ActionButtonsProps } from '@/types/main';
+import './style/BaseActionButtons.module.scss'
 
 
 const BaseActionButtons: React.FC<ActionButtonsProps> = ({ onEdit, onDelete }) => {
-  return (
-    <>
+   return (
+    <div className="base-action-buttons">
       <button
-        className="text-blue-500 hover:text-blue-700 transition-colors"
+        className="edit-button"
         onClick={onEdit}
+        aria-label="Edit"
       >
         <Edit />
       </button>
       <button
-        className="text-red-500 hover:text-red-700 transition-colors"
+        className="delete-button"
         onClick={onDelete}
+        aria-label="Delete"
       >
         <Trash />
       </button>
-    </>
+    </div>
   );
 };
 

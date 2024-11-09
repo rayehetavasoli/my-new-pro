@@ -1,34 +1,35 @@
 import React from 'react';
 import { DeleteBrandProps } from '@/types/main';
 import { Warning2 } from 'iconsax-react';
+import styles from './style/deleteBrand.module.scss'; 
 
 const DeleteBrand: React.FC<DeleteBrandProps> = ({ brand, onCancel, onDelete }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-    <div className=" px-7 py-6 bg-white rounded-[32px] shadow flex flex-col justify-center items-center max-w-md" dir='rtl'>
-      <div className="flex flex-col justify-center items-center gap-4">
-        <Warning2 className='w-10 h-10 justify-center items-center inline-flex' color='#f8285a'/>
-        <h2 className="text-black text-lg font-medium text-right">
-          در صورت تائید برند {brand.brandName} به طور کامل از لیست برندها حذف می شود، آیا مطمئن هستید؟
-        </h2>
+    <div className={styles['delete-brand-container']}>
+      <div className={styles['delete-brand-modal']} dir='rtl'>
+        <div className="flex flex-col justify-center items-center gap-4">
+          <Warning2 className={styles['warning-icon']} />
 
-        <div className="self-stretch flex justify-center items-center gap-4">
+          <h2 className={styles['modal-title']}>
+            در صورت تائید برند {brand.brandName} به طور کامل از لیست برندها حذف می‌شود، آیا مطمئن هستید؟
+          </h2>
+
+          <div className={styles['modal-actions']}>
             <button 
-            className="px-4 py-2 bg-[#f8285a] rounded-[20px] text-white text-md font-medium"
-            onClick={onDelete}
-          >
-            تائید و حذف
-          </button>
-          <button 
-            className="px-4 py-2 bg-white border border-black rounded-[20px] text-[#5f5f5f] text-md font-medium"
-            onClick={onCancel}
-          >
-            لغو
-          </button>
-          
+              className={`${styles['modal-button']} ${styles['delete-button']}`} 
+              onClick={onDelete}
+            >
+              تائید و حذف
+            </button>
+            <button 
+              className={`${styles['modal-button']} ${styles['cancel-button']}`} 
+              onClick={onCancel}
+            >
+              لغو
+            </button>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

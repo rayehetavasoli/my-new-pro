@@ -1,34 +1,34 @@
 import React, { FC } from 'react';
 import Pagination from '../base/BasePagination';
 import { FooterProps } from '@/types/main';
+import styles from './style/footer.module.scss';  // Import the SCSS file
 
 const Footer: FC<FooterProps> = ({ pageSize, onPageSizeChange, currentPage, totalPages, onPageChange }) => {
   return (
-    <div className="flex justify-between items-center mt-4 px-6">
+    <div className={styles['footer-container']}>
       <Pagination 
         totalPages={totalPages} 
         currentPage={currentPage} 
         onPageChange={onPageChange} 
       />
       
-      <div className="flex items-center gap-2">
-        <span className="text-center text-[#4a4a4a] text-sm font-medium">در هر صفحه</span>
+      <div className={styles['page-size-selector']}>
+        <span className={styles['page-size-label']}>در هر صفحه</span>
         <select
           value={pageSize}
           onChange={(e) => onPageSizeChange(Number(e.target.value))}
-          className="border rounded-[16px] border-blue-500 border-2 items-center justify-center px-2 py-1 flex text-center text-[#4a4a4a] text-sm font-medium"
+          className={styles['select']}
         >
           {[5, 10, 15, 20].map((size) => (
             <option
               key={size}
               value={size}
-              className="bg-blue-500 text-white text-sm font-medium rounded-[16px]"
             >
               {size}
             </option>
           ))}
         </select>
-        <span className="text-center text-[#4a4a4a] text-sm font-medium">نمایش</span>
+        <span className={styles['select-label']}>نمایش</span>
       </div>
     </div>
   );

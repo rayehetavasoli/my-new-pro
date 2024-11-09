@@ -1,16 +1,25 @@
 import React from 'react';
 import Link from 'next/link';
+import styles from './style/footer.module.scss';
 
 function Footer() {
   return (
-    <div className="w-full h-1/25 self-stretch px-10 py-3 bg-[#e2e2e2] dark:bg-[#1E1E1E] shadow justify-between items-center inline-flex">
-      <div className="h-6 justify-start items-center gap-4 flex">
-        <Link href="/about-us" className="text-center text-gray-700 dark:text-gray-300 text-md font-normal">درباره ما</Link>
-        <Link href="/support" className="text-center text-gray-700 dark:text-gray-300 text-md font-normal">پشتیبانی</Link>
+    <div className={styles.footerContainer}>
+      <div className={styles.footerLinks}>
+        <Link href="/about-us" className={styles.footerLink}>
+          درباره ما
+        </Link>
+        <Link href="/support" className={styles.footerLink}>
+          پشتیبانی
+        </Link>
       </div>
-      <div className="h-6 justify-center items-center gap-4 flex">
-        <Link href="/dashboard" className="text-center text-gray-700 dark:text-gray-300 text-md font-normal">داشبورد</Link>
-        <Link href="/users" className="text-center text-gray-700 dark:text-gray-300 text-md font-normal">کاربر</Link>
+      <div className={styles.footerLinks}>
+        <Link href="/dashboard" className={styles.footerLink}>
+          داشبورد
+        </Link>
+        <Link href="/users" className={styles.footerLink}>
+          کاربر
+        </Link>
       </div>
     </div>
   );

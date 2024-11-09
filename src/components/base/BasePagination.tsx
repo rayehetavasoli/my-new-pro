@@ -1,5 +1,6 @@
 import React from 'react';
 import { PaginationProps } from '@/types/main';
+import styles from './style/BasePagination.module.scss';
 
 const BasePagination: React.FC<PaginationProps> = ({ totalPages, currentPage, onPageChange }) => {
   const handlePrev = () => {
@@ -37,12 +38,10 @@ const BasePagination: React.FC<PaginationProps> = ({ totalPages, currentPage, on
   };
 
   return (
-    <div className="flex items-center gap-2">
+    <div className={styles.pagination}> {/* استفاده از کلاس pagination */}
       <button
         onClick={handlePrev}
-        className={`w-7 h-7 rounded-full flex items-center justify-center ${
-          currentPage === 1 ? 'bg-gray-200 cursor-not-allowed' : 'bg-gray-100 hover:bg-gray-200'
-        }`}
+        className={`${styles["page-button"]} ${currentPage === 1 ? styles["disabled"] : ""}`}
         disabled={currentPage === 1}
       >
         ❮
@@ -52,9 +51,9 @@ const BasePagination: React.FC<PaginationProps> = ({ totalPages, currentPage, on
         <span
           key={index}
           onClick={() => typeof page === 'number' && handlePageClick(page)}
-          className={`px-2 py-1 rounded-2xl text-center text-sm font-normal cursor-pointer ${
-            currentPage === page ? 'bg-blue-500 text-white font-bold' : 'text-black hover:bg-gray-200'
-          } ${page === "..." ? 'cursor-default' : ''}`}
+          className={`${styles["page-number"]} ${
+            currentPage === page ? styles["active"] : ""
+          } ${page === "..." ? styles["ellipsis"] : ""}`}
         >
           {page}
         </span>
@@ -62,9 +61,7 @@ const BasePagination: React.FC<PaginationProps> = ({ totalPages, currentPage, on
 
       <button
         onClick={handleNext}
-        className={`w-7 h-7 rounded-full flex items-center justify-center ${
-          currentPage === totalPages ? 'bg-gray-200 cursor-not-allowed' : 'bg-gray-100 hover:bg-gray-200'
-        }`}
+        className={`${styles["page-button"]} ${currentPage === totalPages ? styles["disabled"] : ""}`}
         disabled={currentPage === totalPages}
       >
         ❯
